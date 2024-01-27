@@ -31,7 +31,7 @@ namespace PaintDrying
             string prompt = "Welcome to the Pait Drying Simulator. What would you like to do?";
             string[] options = { "Play", "About", "Exit" };
             Menu mainMenu = new Menu(prompt, options);
-            mainMenu.DisplayOptions();
+            int selectedIndex = mainMenu.Run();
 
             WriteLine("Press any key to exit...");
             ReadKey(true);
