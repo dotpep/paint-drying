@@ -11,34 +11,28 @@ namespace PaintDrying
 {
     class Game
     {
-        // Player
-        // TitleScene
-        // NavigationScene
-        // RoomScene
-        // GarageScene
-        // CreditsScene
+        public Player MyPlayer;
 
         public TitleScene MyTitleScene;
+        public CreditsScene MyCreditsScene;
+        public NavigationScene MyNavigationScene;
+        public GarageScene MyGarageScene;
+        public RoomScene MyRoomScene;
 
         public Game()
         {
+            MyPlayer = new Player();
             MyTitleScene = new TitleScene(this);
+            MyCreditsScene = new CreditsScene(this);
+            MyNavigationScene = new NavigationScene(this);
+            MyGarageScene = new GarageScene(this);
+            MyRoomScene = new RoomScene(this);
         }
 
         public void Start()
         {
-            WriteLine("The game is starting");
-            MyTitleScene.Run();
-
             // Scene.Run
-
-            // TitleScene
-            // NavigationScene
-            // RoomScene
-            // GarageScene
-            // CreditsScene
-
-            ConsoleUtils.WaitForKeyPress();
+            MyTitleScene.Run();
         }
 
         public void SubStart()

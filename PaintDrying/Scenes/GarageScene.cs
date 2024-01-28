@@ -10,6 +10,28 @@ namespace PaintDrying.Scenes
 {
     class GarageScene : Scene
     {
+        private string GarageArt = @"+-----------------------------------------------------------+
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                       Garage Scene                        |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
+|                                                           |
++-----------------------------------------------------------+
+";
+
         public GarageScene(Game myGame) : 
             base(myGame)
         {
@@ -17,8 +39,24 @@ namespace PaintDrying.Scenes
 
         public override void Run()
         {
-            WriteLine("Garage scene is running!");
-            ConsoleUtils.WaitForKeyPress();
+            string prompt = $@"{GarageArt} 
+Garage Scene is activated?";
+            string[] options = { "Garage1", "Garage2" };
+            Menu mainMenu = new Menu(prompt, options);
+            int selectedIndex = mainMenu.Run();
+
+            switch (selectedIndex)
+            {
+                case 0:
+                    WriteLine("Garage 1 action runned...");
+                    ConsoleUtils.WaitForKeyPress();
+                    break;
+                case 1:
+                    WriteLine("Garage 2 action runned...");
+                    ConsoleUtils.WaitForKeyPress();
+                    break;
+            }
+
         }
     }
 }
