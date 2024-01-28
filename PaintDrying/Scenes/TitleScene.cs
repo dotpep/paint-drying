@@ -33,7 +33,7 @@ namespace PaintDrying.Scenes
             string prompt = $@"{TitleArt}
 Welcome to the Pait Drying Simulator. What would you like to do?
 (Use the arrow keys to cycle through options and press enter to select an option.)";
-            string[] options = { "Play", "Paint Color", "About", "Exit" };
+            string[] options = { "Play", "Paint Text", "About", "Exit" };
             Menu mainMenu = new Menu(prompt, options);
             int selectedIndex = mainMenu.Run();
 
@@ -43,7 +43,7 @@ Welcome to the Pait Drying Simulator. What would you like to do?
                     MyGame.MyNavigationScene.Run();
                     break;
                 case 1:
-                    PaintColorText();
+                    PaintText();
                     break;
                 case 2:
                     DisplayAboutInfo();
@@ -54,17 +54,7 @@ Welcome to the Pait Drying Simulator. What would you like to do?
             }
         }
 
-        private void RunFirstChoise()
-        {
-            WriteLine("Running First Choise!");
-
-            WriteLine("Press any key to return to the menu.");
-            ReadKey(true);
-            Run();
-        }
-
-
-        private void PaintColorText()
+        private void PaintText()
         {
             string prompt = "What color paint would you like to watch dry?";
             string[] options = { "Red", "Green", "Blue", "Yellow", "Exit" };
@@ -94,8 +84,7 @@ Welcome to the Pait Drying Simulator. What would you like to do?
                 case 4:
                     ResetColor();
 
-                    WriteLine("Press any key to return to the menu.");
-                    ReadKey(true);
+                    //MyGame.Start();
                     Run();
                     break;
             }
@@ -103,7 +92,7 @@ Welcome to the Pait Drying Simulator. What would you like to do?
 
             WriteLine("Press any key to keep Paint Text Color.");
             ReadKey(true);
-            PaintColorText();
+            PaintText();
         }
 
         private void DisplayAboutInfo()
@@ -114,6 +103,9 @@ Welcome to the Pait Drying Simulator. What would you like to do?
             WriteLine("Press any key to return to the menu.");
             ReadKey(true);
             Run();
+
+            //MyGame.Start();
+            //ConsoleUtils.ExitToGivenScene(TitleScene);
         }
     }
 }

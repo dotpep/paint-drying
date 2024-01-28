@@ -39,24 +39,41 @@ namespace PaintDrying.Scenes
 
         public override void Run()
         {
-            string prompt = $@"{GarageArt} 
-Garage Scene is activated?";
-            string[] options = { "Garage1", "Garage2" };
-            Menu mainMenu = new Menu(prompt, options);
-            int selectedIndex = mainMenu.Run();
-
-            switch (selectedIndex)
+            if (!MyGame.MyPlayer.HasFlashlight)
             {
-                case 0:
-                    WriteLine("Garage 1 action runned...");
-                    ConsoleUtils.WaitForKeyPress();
-                    break;
-                case 1:
-                    WriteLine("Garage 2 action runned...");
-                    ConsoleUtils.WaitForKeyPress();
-                    break;
+                Clear();
+                WriteLine("You enter your garage... but you can't see anything. There's nothing to do here yet/");
+                ConsoleUtils.WaitForKeyPress();
+                MyGame.MyNavigationScene.Run();
             }
+            else
+            {
+                Clear();
 
+                string prompt = $@"{GarageArt} 
+You pull out your flashlight and enter your garage. You find a couple paint options.";
+                string[] options = { "Red", "Green", "Blue" };
+                Menu mainMenu = new Menu(prompt, options);
+                int selectedIndex = mainMenu.Run();
+
+                switch (selectedIndex)
+                {
+                    case 0:
+                        WriteLine("You pick up the red paint");
+                        MyGame.MyPlayer.PickUpPaint(ConsoleColor.DarkRed);
+                        break;
+                    case 1:
+                        MyGame.MyPlayer.PickUpPaint(ConsoleColor.DarkGreen);
+                        WriteLine("You pick up the green paint");
+                        break;
+                    case 2:
+                        MyGame.MyPlayer.PickUpPaint(ConsoleColor.DarkBlue);
+                        WriteLine("You pick up the blue paint");
+                        break;
+                }
+                ConsoleUtils.WaitForKeyPress();
+                MyGame.MyNavigationScene.Run();
+            }
         }
     }
 }
