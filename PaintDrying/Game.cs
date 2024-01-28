@@ -5,13 +5,43 @@ using System.Text;
 using System.Threading.Tasks;
 
 using static System.Console;
-
+using PaintDrying.Scenes;
 
 namespace PaintDrying
 {
-    internal class Game
+    class Game
     {
+        // Player
+        // TitleScene
+        // NavigationScene
+        // RoomScene
+        // GarageScene
+        // CreditsScene
+
+        public TitleScene MyTitleScene;
+
+        public Game()
+        {
+            MyTitleScene = new TitleScene(this);
+        }
+
         public void Start()
+        {
+            WriteLine("The game is starting");
+            MyTitleScene.Run();
+
+            // Scene.Run
+
+            // TitleScene
+            // NavigationScene
+            // RoomScene
+            // GarageScene
+            // CreditsScene
+
+            ConsoleUtils.WaitForKeyPress();
+        }
+
+        public void SubStart()
         {
             Title = "Paint Drying - The Game!";
             RunMainMenu();
@@ -35,7 +65,7 @@ namespace PaintDrying
                                                ░               ░ ░                            
 Welcome to the Pait Drying Simulator. What would you like to do?
 (Use the arrow keys to cycle through options and press enter to select an option.)";
-            string[] options = { "Play", "About", "Exit" };
+            string[] options = { "Play", "Paint Color", "About", "Exit" };
             Menu mainMenu = new Menu(prompt, options);
             int selectedIndex = mainMenu.Run();
 
@@ -45,9 +75,12 @@ Welcome to the Pait Drying Simulator. What would you like to do?
                     RunFirstChoise();
                     break;
                 case 1:
-                    DisplayAboutInfo();
+                    PaintColoredText();
                     break;
                 case 2:
+                    DisplayAboutInfo();
+                    break;
+                case 3:
                     ExitGame();
                     break;
             }
@@ -72,8 +105,17 @@ Welcome to the Pait Drying Simulator. What would you like to do?
 
         private void RunFirstChoise()
         {
+            WriteLine("Running First Choise!");
+
+            WriteLine("Press any key to return to the menu.");
+            ReadKey(true);
+            RunMainMenu();
+        }
+
+        private void PaintColoredText()
+        {
             string prompt = "What color paint would you like to watch dry?";
-            string[] options = { "Red", "Green", "Blue", "Yellow" };
+            string[] options = { "Red", "Green", "Blue", "Yellow", "Exit" };
 
             Menu colorMenu = new Menu(prompt, options);
             int selectedIndex = colorMenu.Run();
@@ -97,12 +139,19 @@ Welcome to the Pait Drying Simulator. What would you like to do?
                     ForegroundColor = ConsoleColor.Yellow;
                     WriteLine("\nHere is some riveting yellow paint drying for you...");
                     break;
+                case 4:
+                    ResetColor();
+
+                    WriteLine("Press any key to return to the menu.");
+                    ReadKey(true);
+                    RunMainMenu();
+                    break;
             }
             ResetColor();
 
-            WriteLine("That's all for this game demo!");
-
-            ExitGame();
+            WriteLine("Press any key to keep Paint Text Color.");
+            ReadKey(true);
+            PaintColoredText();
         }
     }
 }
