@@ -21,6 +21,7 @@ namespace PaintDrying
             WriteLine("(Press any key to exit.)");
             ReadKey(true);
             Environment.Exit(0);
+            Clear();
         }
         //public static void ExitToGivenScene(Scene scene)
         //{
