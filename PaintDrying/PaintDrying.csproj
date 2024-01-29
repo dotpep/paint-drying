@@ -5,6 +5,16 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>paint_drying_logo2.ico</ApplicationIcon>
+    <Title>PaintDrying</Title>
+    <PackageProjectUrl>https://github.com/dotpep/paint-drying</PackageProjectUrl>
+    <Description>Paint Drying is CLI adventure game that shows example of State Patterns using C#, .NET 7.0, OOP and Implements Scenes.</Description>
+    <Company>dotpep</Company>
+    <Product>PaintDrying</Product>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="paint_drying_logo2.ico" />
+  </ItemGroup>
 
 </Project>

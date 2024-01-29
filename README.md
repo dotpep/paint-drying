@@ -1,6 +1,6 @@
 # Paint Drying
 
-Simple cli adventure-game that shows example of implementation State Patterns for game Scenes System using C#.
+Simple CLI Adventure-Game that shows example of implementatiom State Patterns for Scenes.
 
 ## Demonstration
 
@@ -9,40 +9,45 @@ Simple cli adventure-game that shows example of implementation State Patterns fo
 ## Release
 
 - current: Version 1.0 Released.
+- [click me to Download Game](https://github.com/dotpep/paint-drying/releases/tag/v1.0.0)
 
 ### Install Game .exe
 
-- noting added.
+- go to Release page on GitHub repo or [click at this release link](https://github.com/dotpep/paint-drying/releases/tag/v1.0.0)
+- download archive file PaintDrying_v1 in format .zip or .rar
+- run .exe file (without deleting other files in archived file)
+- you can create shortcut by clicking Right Mouse Button and choose Shortcut
 
 ### How to play?
 
 > Just use Keyboard in CLI and Enjoy Adventure.
 
 - <kbd>Enter</kbd> to choose options.
-- <kbd>Arrow Up</kbd> to iteracts with Menu System.
-- <kbd>Arrow Down</kbd> to iteracts with Menu System.
+- <kbd>Arrow Up</kbd> to iteract with Menu System.
+- <kbd>Arrow Down</kbd> to iteract with Menu System.
 
 ### Features
 
 - Game Menu Keyboard Controller System
 - Paint Text in Tablet
 - Paint Wall of Room
-- Take Flashlights to enter the Garage
+- Take Flashlights to enter the Garage 
 - Take Paint Color in Garage
 
-### What's next
+### What's next 
 
 > There is some list of idea
 
+- 
+
 ## TODO
 
-> Feel free to contribute you're Ideas and Implemantations.
-
-- [ ] .exe Realese on GitHub
-- [ ] write Install README Section
+- [x] .exe Realese on GitHub
+- [x] capture gif demo of game and add it into README
 - [ ] replace Garage and Room ASCII-Arts
 - [ ] rewrite some text in game
 
 ## Reference
 
 - [Mikewesthad](https://www.youtube.com/@mikewesthad)
+
